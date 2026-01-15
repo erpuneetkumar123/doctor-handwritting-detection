@@ -6,8 +6,23 @@ import google.generativeai as genai
 import io
 
 # === Gemini API Key ===
-genai.configure(api_key="AIzaSyBdXC98bPh_t8ZpvyOZzsX-hXaEQykodX8")
+from dotenv import load_dotenv
+import os
+import google.generativeai as genai
+
+# Load environment variables
+load_dotenv()
+
+# Get Gemini API key from .env
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+if not GEMINI_API_KEY:
+    raise ValueError("Gemini API key missing. Please add it to .env file.")
+
+genai.configure(api_key=GEMINI_API_KEY)
+
 vision_model = genai.GenerativeModel("gemini-1.5-flash")
+
 
 # === OCR Helper ===
 def extract_text_from_image(image):
@@ -70,5 +85,6 @@ with gr.Blocks() as demo:
     btn = gr.Button("Analyze")
 
     btn.click(fn=process_file, inputs=file_input, outputs=output)
+
 
 demo.launch(share=True)
