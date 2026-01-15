@@ -35,36 +35,4 @@ Fast, simple UI (Gradio)
 
 Handles errors, provides clear feedback
 
-🚀 How to Use
-Clone this repository
 
-Install requirements
-
-bash
-pip install gradio Pillow pdf2image pytesseract google-generativeai
-Set your Google Gemini API Key
-
-Run the app
-
-bash
-python <your_script_name>.py
-Open the web interface
-Upload an image or PDF file to see OCR and AI results.
-
-🛠️ Requirements
-Python 3.8+
-
-Google Gemini API access & key
-
-Tesseract OCR installed
-
-📃 Sample Output
-text
-🖼 Image Analysis:
-🔹 OCR Text:
-Welcome to Modeflix!
-
-🔹 Gemini Vision:
-This image shows the homepage of a jewelry e-commerce store.
-🤝 Contributing
-Pull requests welcome! For major changes, please open an issue first to discuss what you would like to change
